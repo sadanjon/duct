@@ -1,0 +1,52 @@
+Solution to the 'AC duct problem'
+================================
+
+Instructions:
+============
+Written and tested on Linux machines. :)
+
+Written in C with no dependencies.
+Just run make, and run the executable 'duct'.
+
+Usage:
+./duct < <grid file>
+
+The grid file describes the grid as follows:
+
+A list of integers separated by whitespace.
+The first two are the width and height in that order.
+And then a width*height integers that describe the grid as follows:
+
+0 - Rooms owned by us
+1 - Rooms not owned by us
+2 - Start room
+3 - End room
+
+Comment:
+========
+
+This solution ran just under one minute for the input you
+gave on your website, On a 2.4 GHz machine in my university.
+
+Please tell me what you think.
+
+Thanks,
+
+Jonathan Sadan
+sadanjon@gmail.com
+
+
+Files
+====
+|-- duct.c
+|-- duct.h
+|-- duct.tar
+|-- grid.c
+|-- grid.h
+|-- Makefile
+|-- node.c
+|-- node.h
+|-- queue.c
+|-- queue.h
+|-- README
+`-- util.h
