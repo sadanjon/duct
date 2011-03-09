@@ -14,7 +14,7 @@ Here are the rules:
 4. The duct has to start at the air intake valve, which is represented by a 2.
 5. The duct has to end at the air conditioner, which is represented by a 3.
 6. The duct cannot go in multiple directions out of the intake or the AC - they
-must be the two endpoints of the duct.
+   must be the two endpoints of the duct.
 7. The duct must pass through each room exactly once.
 8. The duct cannot pass through rooms we do not own.
 9. The duct can connect between rooms horizontally or vertically but not diagonally.
@@ -33,9 +33,9 @@ Usage:
 
 The grid file describes the grid as follows:
 
-A list of integers separated by whitespace.
-The first two are the width and height in that order.
-And then a width*height integers that describe the grid as follows:
+A list of integers separated by whitespace.  The first two are the width and
+height in that order.  And then a width*height integers that describe the grid
+as follows:
 
 0 - Rooms owned by us
 1 - Rooms not owned by us
@@ -46,14 +46,14 @@ The program just prints out one integer.  If you want it to print out solutions
 as it finds them compile with option '-DPRINT'. Just add it to the makefile
 variable CFLAGS. 
 
-There's a 'sample' file with the program for an example input.
-
+There's a 'sample' file with the program for an example input.  The
+'quora_sample' file is the input quora.com suggested. (very complex)
 
 Comment:
 ========
 
-This solution ran just under one minute for the input Quora
-gave on their website, on a 2.4 GHz linux machine.
+This solution ran just under one minute for the input Quora gave on their
+website, on a 2.4 GHz linux machine.
 
 You can reach me at:
 sadanjon at gmail dot com
