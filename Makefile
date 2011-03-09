@@ -1,4 +1,5 @@
 SRC=duct.c grid.c node.c queue.c
+HEADERS=duct.h grid.h node.h queue.h util.h
 OBJ=$(SRC:.c=.o)
 
 CC=gcc
@@ -23,3 +24,6 @@ clean:
 
 tags:
 	ctags -R .
+
+tar:
+	tar cvf duct.tar $(SRC) $(HEADERS) Makefile README

@@ -1,8 +1,28 @@
-Solution to the 'AC duct problem'
-================================
+Solution to the 'Datacenter Cooling" problem:
+============================================
 
-Instructions:
-============
+This problem is on the quora.com 'job challenges':
+
+We have some rooms in our datacenter, and we need to connect them all with a
+single cooling duct.
+
+Here are the rules:
+
+1. The datacenter is represented by a 2D grid.
+2. Rooms we own are represented by a 0.
+3. Rooms we do not own are represented by a 1.
+4. The duct has to start at the air intake valve, which is represented by a 2.
+5. The duct has to end at the air conditioner, which is represented by a 3.
+6. The duct cannot go in multiple directions out of the intake or the AC - they
+must be the two endpoints of the duct.
+7. The duct must pass through each room exactly once.
+8. The duct cannot pass through rooms we do not own.
+9. The duct can connect between rooms horizontally or vertically but not diagonally.
+
+The challenge is "How many ways are there to pass the duct?"
+
+Instructions: 
+============ 
 Written and tested on Linux machines. :)
 
 Written in C with no dependencies.
@@ -22,25 +42,27 @@ And then a width*height integers that describe the grid as follows:
 2 - Start room
 3 - End room
 
+The program just prints out one integer.  If you want it to print out solutions
+as it finds them compile with option '-DPRINT'. Just add it to the makefile
+variable CFLAGS. 
+
+There's a 'sample' file with the program for an example input.
+
+
 Comment:
 ========
 
-This solution ran just under one minute for the input you
-gave on your website, On a 2.4 GHz machine in my university.
+This solution ran just under one minute for the input Quora
+gave on their website, on a 2.4 GHz linux machine.
 
-Please tell me what you think.
-
-Thanks,
-
-Jonathan Sadan
-sadanjon@gmail.com
+You can reach me at:
+sadanjon at gmail dot com
 
 
 Files
-====
+=====
 |-- duct.c
 |-- duct.h
-|-- duct.tar
 |-- grid.c
 |-- grid.h
 |-- Makefile
@@ -48,5 +70,6 @@ Files
 |-- node.h
 |-- queue.c
 |-- queue.h
+|-- sample
 |-- README
 `-- util.h

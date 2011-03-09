@@ -1,3 +1,23 @@
+/*
+ *  'duct' is an algorithm for a special case of the hamilton path problem.
+ *  Copyright 2011 Joanthan Sadan
+ * 
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ *  Contact me:
+ *  sadanjon <at> gmail <dot> com
+ */
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,46 +44,13 @@ int main(int argc, char **argv) {
     // start running!
     DFS(start_node, g, &solutions);
 
+#ifndef PRINT
     // feeeewww... how much?
     printf("%d\n", solutions);
+#endif
 
     return 0;
 }
-
-/**
- * My main...
-int main(int argc, char **argv) {
-    grid_p g = NULL;
-    node_p start_node = NULL;
-
-    time_t start_time, end_time;
-    time_t diff;
-
-    int solutions = 0;
-
-    // init grid and global queue
-    g = grid_init(stdin);
-    QUEUE = queue_init(grid_get_max_rooms(g));
-
-    // the start room.
-    start_node = grid_get_start_node(g);
-
-    // start running!
-    start_time = time(NULL);
-    DFS(start_node, g, &solutions);
-    end_time = time(NULL);
-
-    // feeeewww... how was that?
-    diff = end_time - start_time;
-    printf("time: %ld:%ld:%ld\n", diff/3600, diff/60, diff%60);
-    printf("%d ways to run the duct.\n", solutions);
-
-    grid_free(g);
-    queue_free(QUEUE);
-
-    return 0;
-}
-*/
 
 void DFS(node_p node, grid_p grid, int *solutions) {
     assert(node != NULL);
@@ -76,8 +63,10 @@ void DFS(node_p node, grid_p grid, int *solutions) {
     if (grid_get_count(grid) == grid_get_max_rooms(grid)) {
         if (node_get_type(node) == END) {
             ++(*solutions);
-            //printf("solution no. %d:\n", (*solutions));
-            //grid_print(grid);
+#ifdef PRINT
+            printf("solution no. %d:\n", (*solutions));
+            grid_print(grid);
+#endif
             grid_count_dec(grid);
             return;
         }
